@@ -271,6 +271,7 @@
       display: flex;
       flex-direction: column;
       justify-content: center;
+      align-items: center;
       overflow: hidden;
     }
     .hero__bg {
@@ -295,8 +296,13 @@
     .hero__overlay {
       position: absolute;
       inset: 0;
-      background: linear-gradient(to right, rgba(20,8,2,0.65) 0%, rgba(20,8,2,0.1) 100%);
+      background: linear-gradient(to bottom, rgba(20,8,2,0.25) 0%, rgba(20,8,2,0.5) 60%, rgba(20,8,2,0.75) 100%);
       z-index: 1;
+    }
+    @media (min-width: 768px) {
+      .hero__overlay {
+        background: linear-gradient(to bottom, rgba(20,8,2,0.2) 0%, rgba(20,8,2,0.45) 55%, rgba(20,8,2,0.72) 100%);
+      }
     }
     /* Ornement botanique SVG premium */
     .hero__botanical {
@@ -317,8 +323,18 @@
       padding: 120px 28px 100px;
       max-width: 680px;
     }
-    @media (min-width: 768px) { .hero__content { padding: 140px 48px 120px; } }
-    @media (min-width: 1200px) { .hero__content { padding: 160px 10vw 140px; } }
+    @media (min-width: 768px) {
+      .hero__content {
+        padding: 140px 2rem 120px;
+        margin: 0 auto;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .hero__actions { justify-content: center; }
+    }
+    @media (min-width: 1200px) { .hero__content { padding: 160px 2rem 140px; } }
 
     .hero__eyebrow {
       font-size: 10px;
